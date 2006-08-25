@@ -1,0 +1,7 @@
+README
+======
+
+ If you want to use qemuctl with qemu-laucher, at the "Launcher settings" tab, set the Path to'qemu-ctl' to /usr/bin/qemuctl
+. Now select the "Configurations" tab and the "Emulator" tab. Select "Provide a control panel".
+
+Now, qemuctl is ready to use with qemu-launcher.

@@ -1,0 +1,16 @@
+Source: qemuctl
+Section: misc
+Priority: optional
+Maintainer: Miguel Gea Milvaques <xerakko@debian.org>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: qemuctl
+Architecture: all
+Depends: ${perl:Depends}, ${misc:Depends}, qemu ( >= 0.8.0-1), libgtk2-gladexml-perl (>= 1.005-1)
+Recommends: qemu-launcher
+Description: controlling GUI for qemu
+ This is a controller GUI for the run-time options of QEMU computer
+ emulator. It can be used as a stand-alone application or as a plug-in
+ for Qemu Launcher. (Only x86 PC emulator is supported.)
+  Homepage: http://qemuctl.sourceforge.net/

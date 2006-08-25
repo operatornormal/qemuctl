@@ -8,7 +8,7 @@ MANDIR=$(PREFIX)/share/man/man1
 BINDIR=$(PREFIX)/bin
 SHAREDIR=$(PREFIX)/share/qemuctl
 PIXMAPSDIR=$(PREFIX)/share/pixmaps
-DOCSDIR=$(PREFIX)/share/doc/qemu-launcher
+DOCSDIR=$(PREFIX)/share/doc/qemuctl
 LOCALEDIR=$(PREFIX)/share/locale
 APPLICATIONSDIR=$(PREFIX)/share/applications
 ## End config
