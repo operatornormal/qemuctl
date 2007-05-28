@@ -4,7 +4,7 @@
 qemuctl \- Graphical control for qemu
 .SH "SYNTAX"
 .LP 
-qemuctl [\fI\-suspend\-dir\fP <\fIdir\fP>] [\fI\-suspend\-file\fP <\fIfilename\fP>] [\fI\-nowakeup\fP] qemu\-options
+qemuctl [\fI\-suspend\-dir\fP <\fIdir\fP>] [\fI\-suspend\-file\fP <\fIfilename\fP>] [\fI\-qemu\fP <\fIqemu\fP>]  [\fI\-nowakeup\fP] qemu\-options
 .SH "DESCRIPTION"
 .LP 
 qemuctl is a gui that controls a qemu process with the built\-in monitor of qemu. So you can change devices, suspend machines, save screenshots, ...
@@ -51,6 +51,12 @@ Default is current dir.
 Don't wake up even if the vm\-file is there. Suspend still works.
 .br 
 Default is to wake up using the vm\-file if it is there.
+.TP 
+\fB\-qemu <qemu>\fR
+The qemu variation to use. It can be qemu or kvm.
+.br 
+Default is qemu.
+.TP 
 .TP 
 \fBqemu\-options\fR
 Use qemu\-options for the launch of qemu. See qemu(1) for further details.

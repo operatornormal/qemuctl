@@ -42,14 +42,15 @@ $usbmenu = 0;
 $usbhostmenu = 0;
 @usbmenuitems = 0;
 @usbhostmenuitems = 0;
+$qemu = "qemu";
 
 GetOptions("suspend-dir=s"=>\$suspend_dir,
            "suspend-file=s"=>\$suspend_file,
+	   "qemu=s"=>\$qemu,
            "wakeup!"=>\$wakeup#,
            #"monitor=s"=>\$monitor
 );
-
-$command = "qemu '".join( "' '", @ARGV)."' -monitor stdio";
+$command = $qemu." '".join( "' '", @ARGV)."' -monitor stdio";
 
 GetOptions("fda=s"=>\$default_floppy_a,
            "fdb=s"=>\$default_floppy_b,

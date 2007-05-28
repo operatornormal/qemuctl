@@ -1,3 +1,9 @@
+qemuctl (0.2-2) unstable; urgency=low
+
+  * Added kvm support (Closes: #409573). Thanks to Junichi Uekawa.
+
+ -- Miguel Gea Milvaques <xerakko@debian.org>  Mon, 28 May 2007 19:05:36 +0200
+
 qemuctl (0.2-1) unstable; urgency=low
 
   * Initial release (Closes: #384586)
