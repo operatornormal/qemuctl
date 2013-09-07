@@ -1,0 +1,25 @@
+<RCC>
+  <qresource prefix="/">
+    <file>icons/bluetooth.png</file>
+    <file alias="icons/floppy.png">icons/3floppy_unmount.png</file>
+    <file>icons/xfce-man.png</file>
+    <file>icons/gnome-dev-ethernet.png</file>
+    <file>icons/input-mouse.png</file>
+    <file>icons/input-keyboard.png</file>
+    <file>icons/input-tablet.png</file>
+    <file>icons/add.png</file>
+    <file>icons/edit-delete.png</file>
+    <file>icons/exit.png</file>
+    <file alias="icons/sd.png">icons/gnome-dev-media-sdmmc.png</file>
+    <file>icons/gnome-help.png</file>
+    <file alias="icons/hd.png">icons/harddrive.png</file>
+    <file>icons/help-about.png</file>
+    <file>icons/icon.png</file>
+    <file>icons/input-tablet.png</file>
+    <file>icons/list-add.png</file>
+    <file>icons/list-remove.png</file>
+    <file alias="icons/cdrom.png">icons/media-optical.png</file>
+    <file>icons/player_record.png</file>
+    <file>icons/player_stop.png</file>
+  </qresource>
+</RCC>

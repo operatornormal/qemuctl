@@ -1,3 +1,26 @@
+qemuctl (0.3-1) unstable; urgency=low
+
+  * QA upload.
+  * Set Maintainter to QA Group.
+  * New upstream release. Fixes by upstream:
+    - commit does not work (Closes: #500490)
+    - upstream does not use perl anymore (Closes: #435039), therefore is the
+      not arch:all anymore.
+    - "Can't locate object method "signal_connect" (Closes: #416351)
+    - "Typo in qemuctl" (Closes: #428104)
+  * Basically regnerationg debian/* from scratch: Updating
+    - d/compat -> 9
+    - d/rules remade with the help of dh-make
+    - d/copyright transferred to dep5
+    - d/watch removed dh-make boilerplate
+    - d/control updated, also setting homepage right (Closes: #615404)
+  * Due to above set policy to 3.9.4
+  * New patch 001-ftbfs.patch to fix missing include on unistd.h
+  * New patch 002-debug_cannotopendisplay.patch to fix window
+    integration of qemu window
+
+ -- Tobias Frost <tobi@coldtobi.de>  Sat, 07 Sep 2013 13:16:12 +0200
+
 qemuctl (0.2-2) unstable; urgency=low
 
   * Added kvm support (Closes: #409573). Thanks to Junichi Uekawa.

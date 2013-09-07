@@ -9,47 +9,9 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-build: build-stamp
+%:
+	dh $@
 
-build-stamp:  
-	dh_testdir
-	touch $@
+# overriden to avoid installing to usr/lib/<arch>/... (the override is empty)
+override_dh_auto_install:
 
-clean:
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp configure-stamp
-
-	dh_clean 
-
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k 
-	dh_installdirs
-
-	$(MAKE) install PREFIX=$(CURDIR)/debian/qemuctl/usr
-
-
-# Build architecture-independent files here.
-binary-arch: build install
-# We have nothing to do by default.
-
-# Build architecture-dependent files here.
-binary-indep: build install
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs 
-	dh_installdocs
-	dh_installman
-	dh_link
-	dh_compress
-	dh_fixperms
-	dh_perl
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install

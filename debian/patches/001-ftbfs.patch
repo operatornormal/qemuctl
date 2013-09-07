@@ -1,0 +1,17 @@
+Description: FTBS due to missing include
+Missing include unistd.h
+Author: Tobias Frost <tobi@coldtobi.de>
+Forwared: https://sourceforge.net/p/qemuctl/bugs/4/
+Last-Update: <2013-09-06, last update of the meta-information, optional>
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/qemuctl.cpp
++++ b/qemuctl.cpp
+@@ -1,5 +1,7 @@
+ #include "qemuctl.h"
+ 
++#include <unistd.h>
++
+ qemuctl::qemuctl( QStringList * argv, QWidget *parent)
+     : QMainWindow(parent)
+ {
