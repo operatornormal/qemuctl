@@ -1,3 +1,14 @@
+qemuctl (0.3.1-1) unstable; urgency=low
+
+  * New maintainer. (Closes: #595553)
+  * New upstream release
+  * Removing both patches -- they have been applied upstream
+  * Bumping S-V to 3.9.5, no changes required
+  * Generate manpage in d/rules to avoid linitian warning
+  * Add Vcs-* fields to d/control
+
+ -- Tobias Frost <tobi@coldtobi.de>  Thu, 02 Jan 2014 17:37:04 +0100
+
 qemuctl (0.3-1) unstable; urgency=low
 
   * QA upload.

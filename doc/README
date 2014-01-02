@@ -1,0 +1,8 @@
+Manpage included in POD format.
+You can visit http://perldoc.perl.org/perlpod.html for more details about POD format.
+
+For convertation from POD to man you need only run:
+$ pod2man qemuctl.pod > qemuctl.1
+
+If you need manpage in html forman then you can use next command:
+$ pod2html qemuctl.pod > qemuctl.html

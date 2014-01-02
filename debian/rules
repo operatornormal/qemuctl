@@ -15,3 +15,6 @@
 # overriden to avoid installing to usr/lib/<arch>/... (the override is empty)
 override_dh_auto_install:
 
+override_dh_installman:
+	pod2man doc/qemuctl.pod > debian/qemuctl.1
+	dh_installman

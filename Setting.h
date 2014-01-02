@@ -17,31 +17,22 @@
     along with qemuctl.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*
- * ConsoleInput.h
- *
- *  Created on: Nov 8, 2010
- *      Author: peter
- */
+#ifndef SETTING_H
+#define SETTING_H
 
-#ifndef CONSOLEINPUT_H_
-#define CONSOLEINPUT_H_
+#include <QtGui/QWidget>
+#include "ui_Setting.h"
 
-#include <QFile>
-#include <QByteArray>
-#include <QIODevice>
-#include <QThread>
+class Setting : public QWidget
+{
+    Q_OBJECT
 
-class ConsoleInput: public QThread {
-	Q_OBJECT
 public:
-	ConsoleInput();
-	virtual ~ConsoleInput();
-	void run();
+    Setting(QWidget *parent = 0);
+    ~Setting();
+
 private:
-	bool running;
-signals:
-	void gotCin( QByteArray array );
+    Ui::SettingClass ui;
 };
 
-#endif /* CONSOLEINPUT_H_ */
+#endif // SETTING_H

@@ -212,11 +212,27 @@
     <addaction name="actionAbout_Qemu"/>
     <addaction name="actionAbout_Qemuctl"/>
    </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Se&amp;ttings</string>
+    </property>
+    <widget class="QMenu" name="menuQemu_size">
+     <property name="title">
+      <string>Qemu size</string>
+     </property>
+     <addaction name="action640x480"/>
+     <addaction name="action800x600"/>
+     <addaction name="action1024x768"/>
+    </widget>
+    <addaction name="menuQemu_size"/>
+    <addaction name="actionQemuctl"/>
+   </widget>
    <addaction name="menu_File"/>
    <addaction name="menuMedia"/>
    <addaction name="menu_Hardware"/>
    <addaction name="menu_Send"/>
    <addaction name="menu_Debug"/>
+   <addaction name="menuSettings"/>
    <addaction name="menu_Help"/>
    <addaction name="menuInfo_2"/>
   </widget>
@@ -642,6 +658,26 @@
   <action name="actionSinglestepOff">
    <property name="text">
     <string>Singlestep Off</string>
+   </property>
+  </action>
+  <action name="action640x480">
+   <property name="text">
+    <string>640x480</string>
+   </property>
+  </action>
+  <action name="action800x600">
+   <property name="text">
+    <string>800x600</string>
+   </property>
+  </action>
+  <action name="action1024x768">
+   <property name="text">
+    <string>1024x768</string>
+   </property>
+  </action>
+  <action name="actionQemuctl">
+   <property name="text">
+    <string>Qemuctl</string>
    </property>
   </action>
  </widget>

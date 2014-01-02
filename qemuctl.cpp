@@ -1,8 +1,91 @@
+/*
+    Copyright (C) 2010  Peter Rustler
+
+    This file is part of qemuctl.
+
+    qemuctl is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    qemuctl is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with qemuctl.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include "qemuctl.h"
+
+#include <unistd.h>
+
+#include <X11/Xlib.h>
+#include <X11/Xatom.h>
+#include <list>
+
+using namespace std;
+
+class WindowsMatchingPid
+{
+public:
+    WindowsMatchingPid(Display *display, Window wRoot, unsigned long pid)
+    {
+        _display = display;
+        _pid = pid;
+        _atomPID = XInternAtom(display, "_NET_WM_PID", True);
+        if(_atomPID != None) search(wRoot);
+    }
+
+    const list<Window> &result() const { return _result; }
+
+private:
+    unsigned long  _pid;
+    Atom           _atomPID;
+    Display       *_display;
+    list<Window>   _result;
+
+    void search(Window w)
+    {
+    // Get the PID for the current Window.
+        Atom           type;
+        int            format;
+        unsigned long  nItems;
+        unsigned long  bytesAfter;
+        unsigned char *propPID = 0;
+        if(Success == XGetWindowProperty(_display, w, _atomPID, 0, 1, False, XA_CARDINAL,
+                                         &type, &format, &nItems, &bytesAfter, &propPID))
+        {
+            if(propPID != 0)
+            {
+            // If the PID matches, add this window to the result set.
+                if(_pid == *((unsigned long *)propPID))
+                    _result.push_back(w);
+
+                XFree(propPID);
+            }
+        }
+
+    // Recurse into child windows.
+        Window    wRoot;
+        Window    wParent;
+        Window   *wChild;
+        unsigned  int nChildren;
+        if(XQueryTree(_display, w, &wRoot, &wParent, &wChild, &nChildren))
+        {
+            for(unsigned int i = 0; i < nChildren; i++)
+                search(wChild[i]);
+        }
+    }
+};
+
 
 qemuctl::qemuctl( QStringList * argv, QWidget *parent)
     : QMainWindow(parent)
 {
+	QDiscFileDialog * dfdialog = new QDiscFileDialog();
+	dfdialog->show();
 	winid = 0;
 	bool name = false;
 	ui.setupUi(this);
@@ -64,7 +147,7 @@ qemuctl::qemuctl( QStringList * argv, QWidget *parent)
 				i--;
 			}
 		} else
-		// change qemu/kvm nowakeup ( default: /usr/bin/qemu )
+		// do not wakeup using default suspend file
 		if( parameter[i].compare( QString("-qemuctl-nowakeup") ) == 0 ){
 			if( parameter.size() > i ){
 				nowakeup = true;
@@ -505,6 +588,8 @@ void qemuctl::gotAction( const QString & action ){
 			devicedir.append("/%3.3d/%3.3d");
 			devicedir = QString().sprintf(devicedir.toAscii().data(),bus,device);
 			qDebug("qemuctl::gotAction: devicedir %s",devicedir.toAscii().data());
+			QString cmd = QString().sprintf("usb_add host:%d.%d",bus,device);
+#if QT_VERSION >= 0x040600
 			QFileInfo info(devicedir);
 			if( ! ( info.isReadable() && info.isWritable() ) ){
 				QString message = tr("You have no rights to access the usb bus.\nI am trying to become the owner of the usbdevice.\nRoot passwort ?");
@@ -513,10 +598,14 @@ void qemuctl::gotAction( const QString & action ){
 				qDebug("qemuctl::gotAction: command %s",command.toAscii().data());
 				int ret = QProcess::execute(command);
 				if( ret == 0 ){
-					QString cmd = QString().sprintf("usb_add host:%d.%d",bus,device);
 					emit send(cmd);
 				}
+			} else {
+				emit send(cmd);
 			}
+#else
+			emit send(cmd);
+#endif
 
 		}
 	} else
@@ -786,6 +875,7 @@ void qemuctl::getXWinID(){
         exit(1);
     }
 	list_windows(disp);
+    XCloseDisplay(disp);
 }
 
 int qemuctl::list_windows (Display *disp) {/*{{{*/
@@ -794,6 +884,27 @@ int qemuctl::list_windows (Display *disp) {/*{{{*/
     unsigned int i;
     int max_client_machine_len = 0;
 
+    unsigned long pid = qemuProcess->pid();
+    Window rootw = XDefaultRootWindow(disp);
+    WindowsMatchingPid match(disp, rootw, pid);
+        const list<Window> &result = match.result();
+
+    list<Window>::const_iterator it;
+    for(list<Window>::const_iterator it = result.begin(); it != result.end(); it++)
+    {
+        QString qtitle;
+        qtitle = get_window_title(disp, *it);
+        qDebug("Window %s", get_window_title(disp, *it));
+        if( qtitle.indexOf( QString().sprintf( "QEMUCTL %lld", QApplication::applicationPid() ) ) >= 0 )
+        {
+            winid = *it;
+            return EXIT_SUCCESS;
+        }
+    }
+    return EXIT_FAILURE;
+
+
+#if 0
     if ((client_list = get_client_list(disp, &client_list_size)) == NULL) {
         return EXIT_FAILURE;
     }
@@ -874,6 +985,7 @@ int qemuctl::list_windows (Display *disp) {/*{{{*/
     ////free(client_list);
 
     return EXIT_SUCCESS;
+#endif
 }/*}}}*/
 
 char * qemuctl::get_window_title (Display *disp, Window win) {/*{{{*/

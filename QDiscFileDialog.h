@@ -17,31 +17,22 @@
     along with qemuctl.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*
- * ConsoleInput.h
- *
- *  Created on: Nov 8, 2010
- *      Author: peter
- */
+#ifndef QDISCFILEDIALOG_H
+#define QDISCFILEDIALOG_H
 
-#ifndef CONSOLEINPUT_H_
-#define CONSOLEINPUT_H_
+#include <QtGui/QWidget>
+#include "ui_QDiscFileDialog.h"
 
-#include <QFile>
-#include <QByteArray>
-#include <QIODevice>
-#include <QThread>
+class QDiscFileDialog : public QWidget
+{
+    Q_OBJECT
 
-class ConsoleInput: public QThread {
-	Q_OBJECT
 public:
-	ConsoleInput();
-	virtual ~ConsoleInput();
-	void run();
+    QDiscFileDialog(QWidget *parent = 0);
+    ~QDiscFileDialog();
+
 private:
-	bool running;
-signals:
-	void gotCin( QByteArray array );
+    Ui::QDiscFileDialogClass ui;
 };
 
-#endif /* CONSOLEINPUT_H_ */
+#endif // QDISCFILEDIALOG_H
