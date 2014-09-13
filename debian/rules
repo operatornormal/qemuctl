@@ -18,3 +18,8 @@ override_dh_auto_install:
 override_dh_installman:
 	pod2man doc/qemuctl.pod > debian/qemuctl.1
 	dh_installman
+
+override_dh_clean:
+	rm -f debian/qemuctl.1
+	dh_clean
+

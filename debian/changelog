@@ -1,3 +1,12 @@
+qemuctl (0.3.1-2) unstable; urgency=medium
+
+  * Overriding lintian pedantic messages
+  * Removing generated manpage during clean
+  * Reformatted d/README
+  * Change maintainer email to my new debian one
+
+ -- Tobias Frost <tobi@debian.org>  Sat, 13 Sep 2014 13:48:30 +0200
+
 qemuctl (0.3.1-1) unstable; urgency=low
 
   * New maintainer. (Closes: #595553)

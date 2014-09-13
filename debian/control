@@ -2,7 +2,7 @@ Source: qemuctl
 Homepage: http://qemuctl.sourceforge.net/
 Section: misc
 Priority: optional
-Maintainer: Tobias Frost <tobi@coldtobi.de>
+Maintainer: Tobias Frost <tobi@debian.org>
 Vcs-Browser: https://gitorious.org/qemuctl-debian/qemuctl-debian/
 Vcs-Git: http://git.gitorious.org/qemuctl-debian/qemuctl-debian.git
 Build-Depends: debhelper (>= 9),
@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 9),
                libx11-dev,
                libxext-dev,
                qt4-qmake,
-	       perl
+               perl
 Standards-Version: 3.9.5
 
 Package: qemuctl
