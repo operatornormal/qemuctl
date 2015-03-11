@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddMediaClass</class>
+ <widget class="QWidget" name="AddMediaClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>727</width>
+    <height>528</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QEMUCTL - Add Media</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="qemuctl.qrc">
+    <normaloff>:/icon.png</normaloff>:/icon.png</iconset>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <property name="fieldGrowthPolicy">
+    <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="filenamelabel">
+     <property name="text">
+      <string>Filename</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="formatlabel">
+     <property name="text">
+      <string>Fileformat</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QComboBox" name="formatcomboBox"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="seriallabel">
+     <property name="text">
+      <string>Serial Number of Device</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <layout class="QHBoxLayout" name="serialhorizontalLayout">
+     <item>
+      <widget class="QCheckBox" name="serialcheckBox">
+       <property name="text">
+        <string>Enabled</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="seriallineEdit"/>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="medialabel">
+     <property name="text">
+      <string>Media</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="mediacomboBox"/>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="interfacelabel">
+     <property name="text">
+      <string>Interface</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QComboBox" name="interfacecomboBox"/>
+   </item>
+   <item row="6" column="1">
+    <layout class="QHBoxLayout" name="bushorizontalLayout">
+     <item>
+      <widget class="QSpinBox" name="busspinBox"/>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="unitspinBox"/>
+     </item>
+    </layout>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="buslabel">
+     <property name="text">
+      <string>Bus ID / Unit ID</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="indexlabel">
+     <property name="text">
+      <string>Index ( hda,hdb ...)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QComboBox" name="indexcomboBox"/>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="geometrylabel">
+     <property name="text">
+      <string>Geometry ( cylinder, heads, sectors, [ trans ] )</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <layout class="QHBoxLayout" name="geometryhorizontalLayout">
+     <item>
+      <widget class="QCheckBox" name="geometrycheckBox">
+       <property name="text">
+        <string>Enabled</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="geo1spinBox"/>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="geo2spinBox"/>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="geo3spinBox"/>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="geo4spinBox"/>
+     </item>
+    </layout>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="cachelabel">
+     <property name="text">
+      <string>Cache</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QComboBox" name="cachecomboBox"/>
+   </item>
+   <item row="10" column="1">
+    <widget class="QComboBox" name="aiocomboBox"/>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="aiolabel">
+     <property name="text">
+      <string>Qemu IO</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="addresslabel">
+     <property name="text">
+      <string>Pci Address</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1">
+    <widget class="QComboBox" name="addresscomboBox"/>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="snapshotlabel">
+     <property name="text">
+      <string>Snapshot Mode</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="1">
+    <widget class="QCheckBox" name="snapshotcheckBox">
+     <property name="text">
+      <string>Enabled</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="1">
+    <layout class="QHBoxLayout" name="donehorizontalLayout">
+     <item>
+      <widget class="QPushButton" name="cancelpushButton">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="donepushButton">
+       <property name="text">
+        <string>Done</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="1">
+    <layout class="QHBoxLayout" name="filehorizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="filelineEdit"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="filepushButton">
+       <property name="text">
+        <string>Select</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="qemuctl.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svnroot/qemuctl/!svn/ver/6
+END
+debugmonitor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/qemuctl/!svn/ver/2/debugmonitor.cpp
+END
+serialconnector.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svnroot/qemuctl/!svn/ver/3/serialconnector.h
+END
+debugmonitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svnroot/qemuctl/!svn/ver/2/debugmonitor.h
+END
+qemuctl.ui
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svnroot/qemuctl/!svn/ver/3/qemuctl.ui
+END
+QHexSpinbox.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svnroot/qemuctl/!svn/ver/3/QHexSpinbox.cpp
+END
+qemuctl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svnroot/qemuctl/!svn/ver/3/qemuctl.cpp
+END
+QHexSpinbox.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svnroot/qemuctl/!svn/ver/3/QHexSpinbox.h
+END
+qemuctl.qrc
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svnroot/qemuctl/!svn/ver/2/qemuctl.qrc
+END
+qemuctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svnroot/qemuctl/!svn/ver/3/qemuctl.h
+END
+QemuComunication.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/qemuctl/!svn/ver/2/QemuComunication.cpp
+END
+ConsoleInput.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svnroot/qemuctl/!svn/ver/1/ConsoleInput.cpp
+END
+addmedia.ui
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svnroot/qemuctl/!svn/ver/2/addmedia.ui
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svnroot/qemuctl/!svn/ver/2/main.cpp
+END
+QemuComunication.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/qemuctl/!svn/ver/1/QemuComunication.h
+END
+serialconnector.ui
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svnroot/qemuctl/!svn/ver/3/serialconnector.ui
+END
+ConsoleInput.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svnroot/qemuctl/!svn/ver/1/ConsoleInput.h
+END
+addmedia.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svnroot/qemuctl/!svn/ver/3/addmedia.cpp
+END
+qemuctl.pro
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svnroot/qemuctl/!svn/ver/3/qemuctl.pro
+END
+debugmonitor.ui
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svnroot/qemuctl/!svn/ver/2/debugmonitor.ui
+END
+serialconnector.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/qemuctl/!svn/ver/3/serialconnector.cpp
+END
+addmedia.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svnroot/qemuctl/!svn/ver/2/addmedia.h
+END
