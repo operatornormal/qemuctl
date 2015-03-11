@@ -1,0 +1,77 @@
+.TH "qemuctl" "1" "0.0.1" "Peter Rustler" ""
+.SH "NAME"
+.LP 
+qemuctl \- Graphical control for qemu
+.SH "SYNTAX"
+.LP 
+qemuctl [\fI\-suspend\-dir\fP <\fIdir\fP>] [\fI\-suspend\-file\fP <\fIfilename\fP>] [\fI\-nowakeup\fP] qemu\-options
+.SH "DESCRIPTION"
+.LP 
+qemuctl is a gui that controls a qemu process with the built\-in monitor of qemu. So you can change devices, suspend machines, save screenshots, ...
+.LP 
+If you suspend a machine it will do the following macro:
+.LP 
+stop
+.br 
+screendump "suspend\-dir/suspend\-file.ppm"
+.br 
+savevm "suspend\-dir/suspend\-file.vm"
+.br 
+commit
+.br 
+quit
+.LP 
+.br 
+.br 
+You can afterwards resume the machine with:
+.LP 
+qemuctl \-suspend\-dir suspend\-dir \-suspend\-file suspend\-file your_qemu_options
+.br 
+the suspend\-files will then be deleted
+.br 
+or
+.br 
+qemuctl \-loadvm suspend\-dir/suspend\-file.vm your_qemu_options
+.LP 
+Be aware that you can't use the "\-monitor" option with qemuctl, because it needs the control over the monitor. The option "\-serial stdio" can't be used, too.
+.SH "OPTIONS"
+.LP 
+.TP 
+\fB\-suspend\-file <filename>\fR
+This option is normaly used by qemuctl to support suspend and wakeup. qemuctl can then find the vm\-state\-file in its folders and wakeup the virtual machine. If the file is there the qemuctl waes up the virtual machine and deletes the file afterwards. On suspend the vm\-state\-file is then stored as the <filename> with the .vm ending and the screenshot is stored as the <filename> with the .ppm ending.
+.br 
+Default filename is "suspend".
+.TP 
+\fB\-suspend\-dir <dir>\fR
+This is the dir where the suspend files would be stored or expected.
+.br 
+Default is current dir.
+.TP 
+\fB\-nowakeup\fR
+Don't wake up even if the vm\-file is there. Suspend still works.
+.br 
+Default is to wake up using the vm\-file if it is there.
+.TP 
+\fBqemu\-options\fR
+Use qemu\-options for the launch of qemu. See qemu(1) for further details.
+.SH "FILES"
+.LP 
+none
+.SH "ENVIRONMENT VARIABLES"
+.LP 
+none
+.SH "EXAMPLES"
+.LP 
+To use the suspend file 'Debian 3.1' and store/search it in the '/qemu' dir:
+.LP 
+qemuctl \-suspend\-file "Debian 3.1" \-suspend\-dir "/qemu" \-boot c \-hda hda.raw
+.LP 
+Alternativly you can run it with default suspend filenames:
+.LP 
+qemuctl \-boot c \-hda hda.raw
+.SH "AUTHORS"
+.LP 
+Peter Rustler
+.SH "SEE ALSO"
+.LP 
+qemu(1) qemu\-launcher(1)
