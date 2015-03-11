@@ -1,3 +1,22 @@
+/*
+    Copyright (C) 2010  Peter Rustler
+
+    This file is part of qemuctl.
+
+    qemuctl is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    qemuctl is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with qemuctl.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include "serialconnector.h"
 
 SerialConnector::SerialConnector(QWidget *parent)
@@ -160,7 +179,7 @@ void SerialConnector::fillHostAdresses(){
 	ui.udpSourceComboBox->clear();
 	ui.udpSourceComboBox->addItem( tr("All Interfaces"), "0.0.0.0" );
 	for( int i = 0; i < networks.size(); i++ ){
-		qDebug("net: %s",networks.at(i).humanReadableName().toAscii().data());
+		//qDebug("net: %s",networks.at(i).humanReadableName().toAscii().data());
 		addresses = networks.at(i).addressEntries();
 		for( int j = 0; j < addresses.size(); j++ ){
 			if( addresses.at(j).ip().protocol() == QAbstractSocket::IPv4Protocol ){
@@ -168,7 +187,11 @@ void SerialConnector::fillHostAdresses(){
 				QString item = "";
 				item.append(addresses.at(j).ip().toString());
 				item.append(" - ( ");
+#if QT_VERSION >= 0x040600
 				item.append(networks.at(i).humanReadableName());
+#else
+				item.append(networks.at(i).name());
+#endif
 				item.append(" ");
 				item.append(networks.at(i).hardwareAddress());
 				item.append(" )");

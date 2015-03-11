@@ -1,0 +1,19 @@
+qemuctl (0.3.0-1) unstable; urgency=low
+
+  * Updated to new upstream version
+  * New maintainer (closes: #595553)
+
+ -- Evgeny Dolgikh <marcondream@gmail.com>  Mon, 10 Jan 2011 16:10:44 +0200
+
+qemuctl (0.2-2) unstable; urgency=low
+
+  * Added kvm support (Closes: #409573). Thanks to Junichi Uekawa.
+
+ -- Miguel Gea Milvaques <xerakko@debian.org>  Mon, 28 May 2007 19:05:36 +0200
+
+qemuctl (0.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #384586)
+
+ -- Miguel Gea Milvaques <xerakko@debian.org>  Fri, 25 Aug 2006 12:07:53 +0200
+

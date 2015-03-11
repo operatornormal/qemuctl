@@ -1,0 +1,49 @@
+=head1 NAME
+
+qemuctl - Graphical control for qemu
+
+=head1 SYNTAX
+
+qemuctl [OPTIONS]
+
+=head1 DESCRIPTION
+
+This is a controlling GUI for the emulator "qemu". It is not for configuring devices or starting qemu, no it's for changing media, reset the vm, and so on at runtime. You can start it out of your favorite configuring GUI like you would do with qemu.
+
+=head1 OPTIONS
+
+B<-qemuctl-cmd <path>>
+
+Change qemu/kvm executable ( default: /usr/bin/qemu )
+
+B<-qemuctl-suspend-file <filename>>
+
+Change qemu/kvm suspend file ( default: suspend )
+
+B<-qemuctl-suspend-dir <path>>
+
+Change qemu/kvm suspend dir ( default: current dir )
+
+B<-qemuctl-nowakeup <path>>
+
+Do not wakeup using default suspend file
+
+B<-qemuctl-port <port-number>>
+
+Change qemu/kvm monitor port ( default: 6453 )
+
+=head1 FILES
+
+none
+
+=head1 ENVIRONMENT VARIABLES
+
+none
+
+=head1 AUTHORS
+
+Peter Rustler
+
+=head1 SEE ALSO
+
+qemu(1)

@@ -1,0 +1,22 @@
+Source: qemuctl
+Section: misc
+Priority: optional
+Maintainer: Evgeny Dolgikh <marcondream@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~), libqt4-dev, libx11-dev, libxext-dev
+Standards-Version: 3.9.1
+Homepage: http://qemuctl.sourceforge.net/
+
+Package: qemuctl
+Architecture: i386
+Depends: ${misc:Depends}, ${shlibs:Depends}, qemu
+Description: This is a GUI for virtual pc emulator "qemu".
+ This is a GUI for virtual pc emulator "qemu". But it is not for configuring 
+ devices or starting qemu, no it is for changing media, reset the vm, making 
+ screenshots, and so on. And this at runtime.
+ If you are a user of one of the configuring GUI's, just change the path to 
+ qemu to qemuctl and it work.
+ So, if you are developing a configuring GUI for qemu and you want qemuctl
+ firing up with your GUI. This can just add a suspend screenshot to your GUI
+ like you would see in vmware, then launch qemuctl instead qemu. Now qemuctl
+ will do the job launching qemu. Now drop me a note and you are on the supported
+ configuring GUI's list.
