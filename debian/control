@@ -3,8 +3,8 @@ Homepage: http://qemuctl.sourceforge.net/
 Section: misc
 Priority: optional
 Maintainer: Tobias Frost <tobi@debian.org>
-Vcs-Browser: https://gitorious.org/qemuctl-debian/qemuctl-debian/
-Vcs-Git: http://git.gitorious.org/qemuctl-debian/qemuctl-debian.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/qemuctl.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/qemuctl.git
 Build-Depends: debhelper (>= 9),
                libqt4-dev,
                libx11-dev,
