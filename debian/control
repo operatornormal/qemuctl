@@ -3,11 +3,7 @@ Homepage: http://qemuctl.sourceforge.net/
 Section: misc
 Maintainer: Antti Järvinen <antti.jarvinen@katiska.org>
 Vcs-Browser: https://github.com/operatornormal/qemuctl
-<<<<<<< HEAD
 Vcs-Git: git://github.com/operatornormal/qemuctl.git -b debian
-=======
-Vcs-Git: git://github.com/operatornormal/qemuctl.git
->>>>>>> 66864ebc755c4925d59bdfb073315092147d9d98
 Priority: optional
 Build-Depends: debhelper (>= 9),
                libqt4-dev,
