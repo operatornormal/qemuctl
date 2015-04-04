@@ -1,3 +1,10 @@
+qemuctl (0.3.1-4) experimental; urgency=low
+
+  * New maintainer. (Closes: #780270). Modified maintainer/vcs-fields
+    in control .
+
+ -- Antti Järvinen <antti.jarvinen@katiska.org>  Sun, 05 Apr 2015 01:44:36 +0300
+
 qemuctl (0.3.1-3) experimental; urgency=medium
 
   * Move repository to alioth.d.o -- gitorious is closing
