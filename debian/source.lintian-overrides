@@ -1,3 +1,2 @@
 # upstream does not have ..
 qemuctl: debian-watch-may-check-gpg-signature
-qemuctl: no-upstream-changelog
