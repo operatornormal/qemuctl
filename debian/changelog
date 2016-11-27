@@ -1,3 +1,9 @@
+qemuctl (0.3.1-5) unstable; urgency=low
+
+  * Removed qemu-launher from d/control. (Closes: #845983). 
+
+ -- Antti Järvinen <antti.jarvinen@katiska.org>  Sun, 27 Nov 2016 18:26:55 +0200
+
 qemuctl (0.3.1-4) unstable; urgency=low
 
   * New maintainer. (Closes: #780270). 

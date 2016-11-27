@@ -16,7 +16,6 @@ Standards-Version: 3.9.6
 Package: qemuctl
 Architecture: any
 Depends: qemu ( >= 0.8.0-1), ${misc:Depends}, ${shlibs:Depends}
-Recommends: qemu-launcher
 Description: controlling GUI for qemu
  This is a controller GUI for the run-time options of QEMU computer
  emulator. It can be used as a stand-alone application or as a plug-in
