@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9),
                libxext-dev,
                qt4-qmake,
                perl
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 
 Package: qemuctl
 Architecture: any

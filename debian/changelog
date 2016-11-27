@@ -1,6 +1,7 @@
 qemuctl (0.3.1-5) unstable; urgency=low
 
   * Removed qemu-launher from d/control. (Closes: #845983). 
+  * Bump standards-version to 3.9.8. 
 
  -- Antti Järvinen <antti.jarvinen@katiska.org>  Sun, 27 Nov 2016 18:26:55 +0200
 
